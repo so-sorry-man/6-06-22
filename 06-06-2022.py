@@ -34,4 +34,7 @@ def test_login():
     assert browser.current_url == 'https://cpstaging.snatch.cloud/plugins', 'NOT Plugins'
 
     # inbox
-
+    inbox = browser.find_element(By.CSS_SELECTOR, '[data-test="link-conversation"]')
+    inbox.click()
+    time.sleep(10)
+    assert browser.current_url == 'https://cpstaging.snatch.cloud/conversation', 'NOT Inbox'
