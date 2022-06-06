@@ -38,3 +38,29 @@ def test_login():
     inbox.click()
     time.sleep(10)
     assert browser.current_url == 'https://cpstaging.snatch.cloud/conversation', 'NOT Inbox'
+
+    # reports
+    reports = browser.find_element(By.CSS_SELECTOR, '[data-test="link-reports"]')
+    reports.click()
+    time.sleep(10)
+    assert browser.current_url == 'https://cpstaging.snatch.cloud/reports', 'NOT Reports'
+
+    # nlp
+    nlp = browser.find_element(By.CSS_SELECTOR, '[data-test="link-nlp"]')
+    nlp.click()
+    time.sleep(5)
+    assert browser.current_url == 'https://cpstaging.snatch.cloud/nlp', 'NOT NLP'
+
+    # charts
+    charts = browser.find_element(By.CSS_SELECTOR, '[data-test="link-charts"]')
+    charts.click()
+    time.sleep(5)
+    # decline = browser.find_element(By.CSS_SELECTOR, '[id="hs-eu-decline-button"]')
+    # decline.click() посмотреть на каком шаге модалка закрывается
+    assert browser.current_url == 'https://cpstaging.snatch.cloud/charts', 'NOT Advanced Stats'
+
+    # profile
+    profile = browser.find_element(By.CSS_SELECTOR, '[data-test="profile_router_link"]')
+    profile.click()
+    time.sleep(5)
+    assert browser.current_url == 'https://cpstaging.snatch.cloud/profile', 'NOT Profile'
