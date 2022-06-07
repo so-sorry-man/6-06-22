@@ -64,3 +64,9 @@ def test_login():
     profile.click()
     time.sleep(5)
     assert browser.current_url == 'https://cpstaging.snatch.cloud/profile', 'NOT Profile'
+
+    # profile_payment_system
+    payment = browser.find_element(By.CSS_SELECTOR, '[data-test="profile_payment_router_link"]')
+    payment.click()
+    time.sleep(2)
+    assert browser.current_url == 'https://cpstaging.snatch.cloud/profile/payment', 'NOT Payment System'
