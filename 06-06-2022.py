@@ -55,8 +55,8 @@ def test_login():
     charts = browser.find_element(By.CSS_SELECTOR, '[data-test="link-charts"]')
     charts.click()
     time.sleep(5)
-    # decline = browser.find_element(By.CSS_SELECTOR, '[id="hs-eu-decline-button"]')
-    # decline.click() посмотреть на каком шаге модалка закрывается
+    decline = browser.find_element(By.CSS_SELECTOR, '[id="hs-eu-decline-button"]')
+    decline.click()
     assert browser.current_url == 'https://cpstaging.snatch.cloud/charts', 'NOT Advanced Stats'
 
     # profile
