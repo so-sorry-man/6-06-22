@@ -6,6 +6,7 @@ from selenium.webdriver.remote.webelement import WebElement
 browser = webdriver.Chrome()
 browser.maximize_window()
 
+
 # проверка логина с валидными данными (пользователь подтвердил регистрацию)
 def test_login_1():
     browser.get('https://staging.snatch.cloud/')
@@ -22,6 +23,7 @@ def test_login_1():
     logout = browser.find_element(By.LINK_TEXT, "Выйти")
     logout.click()
     time.sleep(5)
+
 
 # проверка логина с невалидным паролем (пользователь подтвердил регистрацию)
 def test_login_2():
